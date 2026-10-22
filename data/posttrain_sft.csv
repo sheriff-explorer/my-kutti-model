@@ -1,0 +1,101 @@
+id,category,instruction,response
+0,factual,What color is the sky?,The sky is blue during the day.
+1,factual_augmented,Tell me: What color is the sky?,The sky is blue during the day.
+2,factual,What do fish do in water?,Fish swim in water and breathe through their gills.
+3,factual_augmented,Tell me: What do fish do in water?,Fish swim in water and breathe through their gills.
+4,factual,What do birds use to fly?,Birds use their wings to fly through the sky.
+5,factual_augmented,Tell me: What do birds use to fly?,Birds use their wings to fly through the sky.
+6,factual,Where does rain come from?,Rain comes from clouds in the sky.
+7,factual_augmented,Tell me: Where does rain come from?,Rain comes from clouds in the sky.
+8,factual,What do trees have on them?,"Trees have leaves, branches, and roots."
+9,factual_augmented,Tell me: What do trees have on them?,"Trees have leaves, branches, and roots."
+10,factual,What is the sun?,The sun is a big star that gives us light and warmth.
+11,factual_augmented,Tell me: What is the sun?,The sun is a big star that gives us light and warmth.
+12,factual,What do dogs like to do?,"Dogs like to play, run, and be with their owners."
+13,factual_augmented,Tell me: What do dogs like to do?,"Dogs like to play, run, and be with their owners."
+14,factual,Where do fish live?,"Fish live in water, in rivers, lakes, and the ocean."
+15,factual_augmented,Tell me: Where do fish live?,"Fish live in water, in rivers, lakes, and the ocean."
+16,factual,What falls from the sky in winter?,Snow falls from the sky when it is very cold.
+17,factual_augmented,Tell me: What falls from the sky in winter?,Snow falls from the sky when it is very cold.
+18,factual,What helps plants grow?,"Sunlight, water, and soil help plants grow."
+19,factual_augmented,Tell me: What helps plants grow?,"Sunlight, water, and soil help plants grow."
+20,factual,What is the moon?,The moon is a large rock that goes around the Earth.
+21,factual_augmented,Tell me: What is the moon?,The moon is a large rock that goes around the Earth.
+22,factual,What do cats like?,"Cats like to sleep, play, and be warm and comfortable."
+23,factual_augmented,Tell me: What do cats like?,"Cats like to sleep, play, and be warm and comfortable."
+24,factual,What season do flowers bloom?,Flowers bloom in spring when it gets warm.
+25,factual_augmented,Tell me: What season do flowers bloom?,Flowers bloom in spring when it gets warm.
+26,factual,What is bread made from?,Bread is made from flour and water and is baked in an oven.
+27,factual_augmented,Tell me: What is bread made from?,Bread is made from flour and water and is baked in an oven.
+28,factual,What do eyes do?,Eyes help us see the world around us.
+29,factual_augmented,Tell me: What do eyes do?,Eyes help us see the world around us.
+30,factual,What is water made of?,Water is made of tiny parts called hydrogen and oxygen.
+31,factual_augmented,Tell me: What is water made of?,Water is made of tiny parts called hydrogen and oxygen.
+32,factual,What do ears do?,Ears help us hear sounds and music.
+33,factual_augmented,Tell me: What do ears do?,Ears help us hear sounds and music.
+34,factual,What makes a rainbow?,A rainbow appears when sunlight shines through rain drops.
+35,factual_augmented,Tell me: What makes a rainbow?,A rainbow appears when sunlight shines through rain drops.
+36,factual,Where do apples grow?,Apples grow on trees in orchards.
+37,factual_augmented,Tell me: Where do apples grow?,Apples grow on trees in orchards.
+38,factual,What is fire?,Fire is hot and bright and gives light and warmth.
+39,factual_augmented,Tell me: What is fire?,Fire is hot and bright and gives light and warmth.
+40,factual,What do bees make?,Bees make honey in their hives.
+41,factual_augmented,Tell me: What do bees make?,Bees make honey in their hives.
+42,factual,What is a library?,A library is a place with many books that people can read.
+43,factual_augmented,Tell me: What is a library?,A library is a place with many books that people can read.
+44,factual,What do children do at school?,"Children learn to read, write, and discover new things at school."
+45,factual_augmented,Tell me: What do children do at school?,"Children learn to read, write, and discover new things at school."
+46,factual,What is a nest?,A nest is a home that birds build to lay their eggs.
+47,factual_augmented,Tell me: What is a nest?,A nest is a home that birds build to lay their eggs.
+48,factual,What do frogs eat?,Frogs eat insects like flies and beetles.
+49,factual_augmented,Tell me: What do frogs eat?,Frogs eat insects like flies and beetles.
+50,factual,What is a forest?,A forest is a large area filled with many trees.
+51,factual_augmented,Tell me: What is a forest?,A forest is a large area filled with many trees.
+52,factual,What happens in autumn?,"In autumn, leaves change colors and fall from the trees."
+53,factual_augmented,Tell me: What happens in autumn?,"In autumn, leaves change colors and fall from the trees."
+54,factual,What does a farmer do?,A farmer grows food and takes care of animals.
+55,factual_augmented,Tell me: What does a farmer do?,A farmer grows food and takes care of animals.
+56,factual,What is a river?,A river is a large stream of water that flows to the sea.
+57,factual_augmented,Tell me: What is a river?,A river is a large stream of water that flows to the sea.
+58,factual,What do rabbits eat?,"Rabbits eat carrots, grass, and other vegetables."
+59,factual_augmented,Tell me: What do rabbits eat?,"Rabbits eat carrots, grass, and other vegetables."
+60,factual,What is the ocean?,The ocean is a vast body of salt water covering much of Earth.
+61,factual_augmented,Tell me: What is the ocean?,The ocean is a vast body of salt water covering much of Earth.
+62,factual,What does a baker make?,"A baker makes bread, cakes, and other delicious food."
+63,factual_augmented,Tell me: What does a baker make?,"A baker makes bread, cakes, and other delicious food."
+64,factual,What is wind?,Wind is moving air that we can feel on our face.
+65,factual_augmented,Tell me: What is wind?,Wind is moving air that we can feel on our face.
+66,factual,What do butterflies eat?,Butterflies drink nectar from flowers.
+67,factual_augmented,Tell me: What do butterflies eat?,Butterflies drink nectar from flowers.
+68,factual,What is a mountain?,A mountain is a very tall piece of land that rises high.
+69,factual_augmented,Tell me: What is a mountain?,A mountain is a very tall piece of land that rises high.
+70,factual,Why do we sleep?,We sleep so our bodies and minds can rest and grow stronger.
+71,factual_augmented,Tell me: Why do we sleep?,We sleep so our bodies and minds can rest and grow stronger.
+72,factual,What is a bridge?,A bridge is a structure that helps people cross over water or roads.
+73,factual_augmented,Tell me: What is a bridge?,A bridge is a structure that helps people cross over water or roads.
+74,factual,What do bears eat?,"Bears eat fish, berries, and honey."
+75,factual_augmented,Tell me: What do bears eat?,"Bears eat fish, berries, and honey."
+76,factual,What is the color of grass?,Grass is green and grows in fields and gardens.
+77,factual_augmented,Tell me: What is the color of grass?,Grass is green and grows in fields and gardens.
+78,factual,What is a cloud?,A cloud is made of tiny drops of water floating in the sky.
+79,factual_augmented,Tell me: What is a cloud?,A cloud is made of tiny drops of water floating in the sky.
+80,narrative,Begin a story about a rabbit in the forest.,"Once there was a little rabbit who lived in a big green forest. Every morning, it hopped through the tall grass looking for carrots."
+81,narrative_augmented,Tell me: Begin a story about a rabbit in the forest.,"Once there was a little rabbit who lived in a big green forest. Every morning, it hopped through the tall grass looking for carrots."
+82,narrative,Start a story about a child who finds a treasure.,"One sunny afternoon, a young girl named Lily was playing in her garden. She dug a hole and found a shiny box buried deep in the ground."
+83,narrative_augmented,Tell me: Start a story about a child who finds a treasure.,"One sunny afternoon, a young girl named Lily was playing in her garden. She dug a hole and found a shiny box buried deep in the ground."
+84,narrative,Begin a story about a kind dragon.,"In a land far away, there lived a dragon who was different from all the others. Instead of breathing fire to scare people, he used it to bake bread for the village."
+85,narrative_augmented,Tell me: Begin a story about a kind dragon.,"In a land far away, there lived a dragon who was different from all the others. Instead of breathing fire to scare people, he used it to bake bread for the village."
+86,narrative,Start a story about a talking fish.,Deep in a calm blue lake lived a small orange fish who could talk. Nobody knew about this gift until one day a little boy sat by the water.
+87,narrative_augmented,Tell me: Start a story about a talking fish.,Deep in a calm blue lake lived a small orange fish who could talk. Nobody knew about this gift until one day a little boy sat by the water.
+88,narrative,Begin a story about a lost puppy.,"A tiny brown puppy wandered away from its home one rainy afternoon. It ran through the wet streets, looking for a friendly face."
+89,narrative_augmented,Tell me: Begin a story about a lost puppy.,"A tiny brown puppy wandered away from its home one rainy afternoon. It ran through the wet streets, looking for a friendly face."
+90,narrative,Start a story about a brave little bird.,"High up in a tall oak tree, a tiny sparrow named Pip wanted to fly. All the other birds could soar above the clouds, but Pip was afraid."
+91,narrative_augmented,Tell me: Start a story about a brave little bird.,"High up in a tall oak tree, a tiny sparrow named Pip wanted to fly. All the other birds could soar above the clouds, but Pip was afraid."
+92,narrative,Begin a story about a wizard's apprentice.,"Every morning, a young boy named Finn would sweep the wizard's tower. One day, he accidentally knocked over a glowing blue bottle."
+93,narrative_augmented,Tell me: Begin a story about a wizard's apprentice.,"Every morning, a young boy named Finn would sweep the wizard's tower. One day, he accidentally knocked over a glowing blue bottle."
+94,narrative,Start a story about a snowman who comes to life.,"On the coldest night of winter, three children built a snowman in the yard. In the morning, they were amazed to find it had moved closer to the house."
+95,narrative_augmented,Tell me: Start a story about a snowman who comes to life.,"On the coldest night of winter, three children built a snowman in the yard. In the morning, they were amazed to find it had moved closer to the house."
+96,narrative,Begin a story about a kind farmer.,Old Farmer Green lived on a small hill with lots of animals. He fed them every morning and sang songs to make them happy.
+97,narrative_augmented,Tell me: Begin a story about a kind farmer.,Old Farmer Green lived on a small hill with lots of animals. He fed them every morning and sang songs to make them happy.
+98,narrative,Start a story about a child who learns to read.,"Maya sat under the big apple tree with her first real book. The words were hard at first, but she kept trying, one page at a time."
+99,narrative_augmented,Tell me: Start a story about a child who learns to read.,"Maya sat under the big apple tree with her first real book. The words were hard at first, but she kept trying, one page at a time."

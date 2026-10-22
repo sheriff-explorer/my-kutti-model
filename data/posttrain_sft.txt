@@ -1,0 +1,300 @@
+Q: What color is the sky?
+A: The sky is blue during the day.
+
+Q: Tell me: What color is the sky?
+A: The sky is blue during the day.
+
+Q: What do fish do in water?
+A: Fish swim in water and breathe through their gills.
+
+Q: Tell me: What do fish do in water?
+A: Fish swim in water and breathe through their gills.
+
+Q: What do birds use to fly?
+A: Birds use their wings to fly through the sky.
+
+Q: Tell me: What do birds use to fly?
+A: Birds use their wings to fly through the sky.
+
+Q: Where does rain come from?
+A: Rain comes from clouds in the sky.
+
+Q: Tell me: Where does rain come from?
+A: Rain comes from clouds in the sky.
+
+Q: What do trees have on them?
+A: Trees have leaves, branches, and roots.
+
+Q: Tell me: What do trees have on them?
+A: Trees have leaves, branches, and roots.
+
+Q: What is the sun?
+A: The sun is a big star that gives us light and warmth.
+
+Q: Tell me: What is the sun?
+A: The sun is a big star that gives us light and warmth.
+
+Q: What do dogs like to do?
+A: Dogs like to play, run, and be with their owners.
+
+Q: Tell me: What do dogs like to do?
+A: Dogs like to play, run, and be with their owners.
+
+Q: Where do fish live?
+A: Fish live in water, in rivers, lakes, and the ocean.
+
+Q: Tell me: Where do fish live?
+A: Fish live in water, in rivers, lakes, and the ocean.
+
+Q: What falls from the sky in winter?
+A: Snow falls from the sky when it is very cold.
+
+Q: Tell me: What falls from the sky in winter?
+A: Snow falls from the sky when it is very cold.
+
+Q: What helps plants grow?
+A: Sunlight, water, and soil help plants grow.
+
+Q: Tell me: What helps plants grow?
+A: Sunlight, water, and soil help plants grow.
+
+Q: What is the moon?
+A: The moon is a large rock that goes around the Earth.
+
+Q: Tell me: What is the moon?
+A: The moon is a large rock that goes around the Earth.
+
+Q: What do cats like?
+A: Cats like to sleep, play, and be warm and comfortable.
+
+Q: Tell me: What do cats like?
+A: Cats like to sleep, play, and be warm and comfortable.
+
+Q: What season do flowers bloom?
+A: Flowers bloom in spring when it gets warm.
+
+Q: Tell me: What season do flowers bloom?
+A: Flowers bloom in spring when it gets warm.
+
+Q: What is bread made from?
+A: Bread is made from flour and water and is baked in an oven.
+
+Q: Tell me: What is bread made from?
+A: Bread is made from flour and water and is baked in an oven.
+
+Q: What do eyes do?
+A: Eyes help us see the world around us.
+
+Q: Tell me: What do eyes do?
+A: Eyes help us see the world around us.
+
+Q: What is water made of?
+A: Water is made of tiny parts called hydrogen and oxygen.
+
+Q: Tell me: What is water made of?
+A: Water is made of tiny parts called hydrogen and oxygen.
+
+Q: What do ears do?
+A: Ears help us hear sounds and music.
+
+Q: Tell me: What do ears do?
+A: Ears help us hear sounds and music.
+
+Q: What makes a rainbow?
+A: A rainbow appears when sunlight shines through rain drops.
+
+Q: Tell me: What makes a rainbow?
+A: A rainbow appears when sunlight shines through rain drops.
+
+Q: Where do apples grow?
+A: Apples grow on trees in orchards.
+
+Q: Tell me: Where do apples grow?
+A: Apples grow on trees in orchards.
+
+Q: What is fire?
+A: Fire is hot and bright and gives light and warmth.
+
+Q: Tell me: What is fire?
+A: Fire is hot and bright and gives light and warmth.
+
+Q: What do bees make?
+A: Bees make honey in their hives.
+
+Q: Tell me: What do bees make?
+A: Bees make honey in their hives.
+
+Q: What is a library?
+A: A library is a place with many books that people can read.
+
+Q: Tell me: What is a library?
+A: A library is a place with many books that people can read.
+
+Q: What do children do at school?
+A: Children learn to read, write, and discover new things at school.
+
+Q: Tell me: What do children do at school?
+A: Children learn to read, write, and discover new things at school.
+
+Q: What is a nest?
+A: A nest is a home that birds build to lay their eggs.
+
+Q: Tell me: What is a nest?
+A: A nest is a home that birds build to lay their eggs.
+
+Q: What do frogs eat?
+A: Frogs eat insects like flies and beetles.
+
+Q: Tell me: What do frogs eat?
+A: Frogs eat insects like flies and beetles.
+
+Q: What is a forest?
+A: A forest is a large area filled with many trees.
+
+Q: Tell me: What is a forest?
+A: A forest is a large area filled with many trees.
+
+Q: What happens in autumn?
+A: In autumn, leaves change colors and fall from the trees.
+
+Q: Tell me: What happens in autumn?
+A: In autumn, leaves change colors and fall from the trees.
+
+Q: What does a farmer do?
+A: A farmer grows food and takes care of animals.
+
+Q: Tell me: What does a farmer do?
+A: A farmer grows food and takes care of animals.
+
+Q: What is a river?
+A: A river is a large stream of water that flows to the sea.
+
+Q: Tell me: What is a river?
+A: A river is a large stream of water that flows to the sea.
+
+Q: What do rabbits eat?
+A: Rabbits eat carrots, grass, and other vegetables.
+
+Q: Tell me: What do rabbits eat?
+A: Rabbits eat carrots, grass, and other vegetables.
+
+Q: What is the ocean?
+A: The ocean is a vast body of salt water covering much of Earth.
+
+Q: Tell me: What is the ocean?
+A: The ocean is a vast body of salt water covering much of Earth.
+
+Q: What does a baker make?
+A: A baker makes bread, cakes, and other delicious food.
+
+Q: Tell me: What does a baker make?
+A: A baker makes bread, cakes, and other delicious food.
+
+Q: What is wind?
+A: Wind is moving air that we can feel on our face.
+
+Q: Tell me: What is wind?
+A: Wind is moving air that we can feel on our face.
+
+Q: What do butterflies eat?
+A: Butterflies drink nectar from flowers.
+
+Q: Tell me: What do butterflies eat?
+A: Butterflies drink nectar from flowers.
+
+Q: What is a mountain?
+A: A mountain is a very tall piece of land that rises high.
+
+Q: Tell me: What is a mountain?
+A: A mountain is a very tall piece of land that rises high.
+
+Q: Why do we sleep?
+A: We sleep so our bodies and minds can rest and grow stronger.
+
+Q: Tell me: Why do we sleep?
+A: We sleep so our bodies and minds can rest and grow stronger.
+
+Q: What is a bridge?
+A: A bridge is a structure that helps people cross over water or roads.
+
+Q: Tell me: What is a bridge?
+A: A bridge is a structure that helps people cross over water or roads.
+
+Q: What do bears eat?
+A: Bears eat fish, berries, and honey.
+
+Q: Tell me: What do bears eat?
+A: Bears eat fish, berries, and honey.
+
+Q: What is the color of grass?
+A: Grass is green and grows in fields and gardens.
+
+Q: Tell me: What is the color of grass?
+A: Grass is green and grows in fields and gardens.
+
+Q: What is a cloud?
+A: A cloud is made of tiny drops of water floating in the sky.
+
+Q: Tell me: What is a cloud?
+A: A cloud is made of tiny drops of water floating in the sky.
+
+Q: Begin a story about a rabbit in the forest.
+A: Once there was a little rabbit who lived in a big green forest. Every morning, it hopped through the tall grass looking for carrots.
+
+Q: Tell me: Begin a story about a rabbit in the forest.
+A: Once there was a little rabbit who lived in a big green forest. Every morning, it hopped through the tall grass looking for carrots.
+
+Q: Start a story about a child who finds a treasure.
+A: One sunny afternoon, a young girl named Lily was playing in her garden. She dug a hole and found a shiny box buried deep in the ground.
+
+Q: Tell me: Start a story about a child who finds a treasure.
+A: One sunny afternoon, a young girl named Lily was playing in her garden. She dug a hole and found a shiny box buried deep in the ground.
+
+Q: Begin a story about a kind dragon.
+A: In a land far away, there lived a dragon who was different from all the others. Instead of breathing fire to scare people, he used it to bake bread for the village.
+
+Q: Tell me: Begin a story about a kind dragon.
+A: In a land far away, there lived a dragon who was different from all the others. Instead of breathing fire to scare people, he used it to bake bread for the village.
+
+Q: Start a story about a talking fish.
+A: Deep in a calm blue lake lived a small orange fish who could talk. Nobody knew about this gift until one day a little boy sat by the water.
+
+Q: Tell me: Start a story about a talking fish.
+A: Deep in a calm blue lake lived a small orange fish who could talk. Nobody knew about this gift until one day a little boy sat by the water.
+
+Q: Begin a story about a lost puppy.
+A: A tiny brown puppy wandered away from its home one rainy afternoon. It ran through the wet streets, looking for a friendly face.
+
+Q: Tell me: Begin a story about a lost puppy.
+A: A tiny brown puppy wandered away from its home one rainy afternoon. It ran through the wet streets, looking for a friendly face.
+
+Q: Start a story about a brave little bird.
+A: High up in a tall oak tree, a tiny sparrow named Pip wanted to fly. All the other birds could soar above the clouds, but Pip was afraid.
+
+Q: Tell me: Start a story about a brave little bird.
+A: High up in a tall oak tree, a tiny sparrow named Pip wanted to fly. All the other birds could soar above the clouds, but Pip was afraid.
+
+Q: Begin a story about a wizard's apprentice.
+A: Every morning, a young boy named Finn would sweep the wizard's tower. One day, he accidentally knocked over a glowing blue bottle.
+
+Q: Tell me: Begin a story about a wizard's apprentice.
+A: Every morning, a young boy named Finn would sweep the wizard's tower. One day, he accidentally knocked over a glowing blue bottle.
+
+Q: Start a story about a snowman who comes to life.
+A: On the coldest night of winter, three children built a snowman in the yard. In the morning, they were amazed to find it had moved closer to the house.
+
+Q: Tell me: Start a story about a snowman who comes to life.
+A: On the coldest night of winter, three children built a snowman in the yard. In the morning, they were amazed to find it had moved closer to the house.
+
+Q: Begin a story about a kind farmer.
+A: Old Farmer Green lived on a small hill with lots of animals. He fed them every morning and sang songs to make them happy.
+
+Q: Tell me: Begin a story about a kind farmer.
+A: Old Farmer Green lived on a small hill with lots of animals. He fed them every morning and sang songs to make them happy.
+
+Q: Start a story about a child who learns to read.
+A: Maya sat under the big apple tree with her first real book. The words were hard at first, but she kept trying, one page at a time.
+
+Q: Tell me: Start a story about a child who learns to read.
+A: Maya sat under the big apple tree with her first real book. The words were hard at first, but she kept trying, one page at a time.
+

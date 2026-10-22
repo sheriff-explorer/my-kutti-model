@@ -73,7 +73,7 @@ CHECKPOINT_DIR      = "checkpoints/midtrain"
 
 def generate_curated_corpus(tokenizer: BPETokenizer) -> list:
     """
-    Generate a curated domain-focused corpus for mid-training.
+    Generate or load a curated domain-focused corpus for mid-training.
 
     This combines:
     1. Simple factual statements (entity-attribute pairs)
@@ -82,81 +82,88 @@ def generate_curated_corpus(tokenizer: BPETokenizer) -> list:
     In a real project, you'd use actual high-quality data (Wikipedia summaries,
     curated Q&A datasets, etc.). For our 2M model, synthetic data works fine.
     """
-    print("  Generating curated mid-training corpus...")
+    corpus_file = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "midtrain_corpus.txt")
+    if os.path.exists(corpus_file):
+        print(f"  Loading curated mid-training corpus from flat file: {corpus_file}")
+        with open(corpus_file, "r", encoding="utf-8") as f:
+            texts = [line.strip() for line in f if line.strip()]
+        print(f"  Loaded {len(texts):,} text samples from flat file.")
+    else:
+        print("  Generating curated mid-training corpus...")
 
-    texts = []
+        texts = []
 
-    # ── Domain 1: Simple factual statements ─────────────────────────────────
-    facts = [
-        "The sky is blue during the day and orange at sunset.",
-        "Water is made of hydrogen and oxygen.",
-        "The sun is a star at the center of our solar system.",
-        "Dogs are friendly animals that like to play and run.",
-        "Cats sleep a lot and like to be comfortable and warm.",
-        "Trees grow tall and have leaves that turn colors in autumn.",
-        "Birds have wings and can fly high in the sky.",
-        "Fish live in water and breathe through their gills.",
-        "The moon goes around the Earth and shines at night.",
-        "Rain comes from clouds and helps plants grow.",
-        "Apples grow on trees and are red, green, or yellow.",
-        "Children learn new things every day at school.",
-        "The ocean is very deep and full of many creatures.",
-        "Snow falls in winter when it is very cold outside.",
-        "Flowers bloom in spring when the weather gets warm.",
-        "Bread is made from flour, water, and baked in an oven.",
-        "Fire is hot and gives light but must be handled carefully.",
-        "Books contain stories and information that people enjoy.",
-        "A family lives together and takes care of each other.",
-        "Friends make life happy and fun by playing together.",
-    ]
+        # ── Domain 1: Simple factual statements ─────────────────────────────────
+        facts = [
+            "The sky is blue during the day and orange at sunset.",
+            "Water is made of hydrogen and oxygen.",
+            "The sun is a star at the center of our solar system.",
+            "Dogs are friendly animals that like to play and run.",
+            "Cats sleep a lot and like to be comfortable and warm.",
+            "Trees grow tall and have leaves that turn colors in autumn.",
+            "Birds have wings and can fly high in the sky.",
+            "Fish live in water and breathe through their gills.",
+            "The moon goes around the Earth and shines at night.",
+            "Rain comes from clouds and helps plants grow.",
+            "Apples grow on trees and are red, green, or yellow.",
+            "Children learn new things every day at school.",
+            "The ocean is very deep and full of many creatures.",
+            "Snow falls in winter when it is very cold outside.",
+            "Flowers bloom in spring when the weather gets warm.",
+            "Bread is made from flour, water, and baked in an oven.",
+            "Fire is hot and gives light but must be handled carefully.",
+            "Books contain stories and information that people enjoy.",
+            "A family lives together and takes care of each other.",
+            "Friends make life happy and fun by playing together.",
+        ]
 
-    # Repeat and vary to create more data
-    for _ in range(100):
-        texts.extend(facts)
+        # Repeat and vary to create more data
+        for _ in range(100):
+            texts.extend(facts)
 
-    # ── Domain 2: Short story snippets ──────────────────────────────────────
-    story_templates = [
-        "Once there was a little {animal} who lived in the {place}. "
-        "Every day it would {action}. One day, something special happened.",
+        # ── Domain 2: Short story snippets ──────────────────────────────────────
+        story_templates = [
+            "Once there was a little {animal} who lived in the {place}. "
+            "Every day it would {action}. One day, something special happened.",
 
-        "A young {character} wanted to learn how to {skill}. "
-        "At first it was hard, but with practice, they got better and better.",
+            "A young {character} wanted to learn how to {skill}. "
+            "At first it was hard, but with practice, they got better and better.",
 
-        "In a small village, there lived a kind {character}. "
-        "Everyone loved them because they always helped their neighbors.",
+            "In a small village, there lived a kind {character}. "
+            "Everyone loved them because they always helped their neighbors.",
 
-        "The little {animal} found a shiny {object} in the forest. "
-        "It did not know what it was, so it asked its friends for help.",
+            "The little {animal} found a shiny {object} in the forest. "
+            "It did not know what it was, so it asked its friends for help.",
 
-        "One morning, {name} woke up and saw that the sky was very bright. "
-        "It was going to be a wonderful day full of adventures.",
-    ]
+            "One morning, {name} woke up and saw that the sky was very bright. "
+            "It was going to be a wonderful day full of adventures.",
+        ]
 
-    animals     = ["rabbit", "fox", "bear", "bird", "cat", "dog", "turtle", "owl"]
-    places      = ["forest", "meadow", "pond", "garden", "hill", "valley"]
-    actions     = ["search for food", "explore the woods", "sing a song", "play with friends"]
-    characters  = ["child", "girl", "boy", "farmer", "baker"]
-    skills      = ["read", "draw", "cook", "swim", "ride a bicycle"]
-    objects     = ["stone", "leaf", "acorn", "flower", "feather"]
-    names       = ["Lily", "Tom", "Emma", "Jack", "Sophie", "Ben", "Anna", "Max"]
+        animals     = ["rabbit", "fox", "bear", "bird", "cat", "dog", "turtle", "owl"]
+        places      = ["forest", "meadow", "pond", "garden", "hill", "valley"]
+        actions     = ["search for food", "explore the woods", "sing a song", "play with friends"]
+        characters  = ["child", "girl", "boy", "farmer", "baker"]
+        skills      = ["read", "draw", "cook", "swim", "ride a bicycle"]
+        objects     = ["stone", "leaf", "acorn", "flower", "feather"]
+        names       = ["Lily", "Tom", "Emma", "Jack", "Sophie", "Ben", "Anna", "Max"]
 
-    import random
-    random.seed(42)
+        import random
+        random.seed(42)
 
-    for _ in range(500):
-        template = random.choice(story_templates)
-        story = template.format(
-            animal    = random.choice(animals),
-            place     = random.choice(places),
-            action    = random.choice(actions),
-            character = random.choice(characters),
-            skill     = random.choice(skills),
-            object    = random.choice(objects),
-            name      = random.choice(names),
-        )
-        texts.append(story)
+        for _ in range(500):
+            template = random.choice(story_templates)
+            story = template.format(
+                animal    = random.choice(animals),
+                place     = random.choice(places),
+                action    = random.choice(actions),
+                character = random.choice(characters),
+                skill     = random.choice(skills),
+                object    = random.choice(objects),
+                name      = random.choice(names),
+            )
+            texts.append(story)
 
-    print(f"  Generated {len(texts):,} text samples.")
+        print(f"  Generated {len(texts):,} text samples.")
 
     # Tokenize
     eos_id = tokenizer.eos_id

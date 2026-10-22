@@ -31,6 +31,7 @@ Prerequisites:
     - checkpoints/tokenizer.json must exist
 """
 
+import json
 import os
 import sys
 import torch
@@ -88,6 +89,18 @@ def build_sft_dataset():
     1. Factual Q&A -- tests factual recall and simple reasoning
     2. Story starters -- tests creative continuation, leverages TinyStories pre-training
     """
+    sft_file = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "posttrain_sft.jsonl")
+    if os.path.exists(sft_file):
+        print(f"  Loading SFT dataset from flat file: {sft_file}")
+        augmented = []
+        with open(sft_file, "r", encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if line:
+                    item = json.loads(line)
+                    augmented.append((item["instruction"], item["response"]))
+        print(f"SFT dataset: {len(augmented)} Q&A pairs loaded from flat file.")
+        return augmented
 
     qa_pairs = []
 
@@ -204,7 +217,7 @@ def build_sft_dataset():
 
 def main():
     print("=" * 60)
-    print(" TinyGPT -- Stage 3: Post-training (SFT)")
+    print(" TinyGPT -- Stage 2: Post-training (SFT)")
     print("=" * 60)
 
     # Load tokenizer
