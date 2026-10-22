@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TinyGPT Pre-training Telemetry</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <style>
+    :root {
+      color-scheme: light dark;
+    }
+    .chart-line {
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+      animation: draw 1.2s ease-out forwards;
+    }
+    @keyframes draw {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+  </style>
+</head>
+<body class="bg-transparent text-[var(--foreground)] antialiased p-4">
+  <div class="max-w-4xl mx-auto bg-[var(--card)] text-[var(--foreground)] border border-[var(--border)] rounded-2xl p-6 shadow-md space-y-6">
+    
+    <!-- Header -->
+    <div class="flex flex-wrap items-center justify-between gap-4 border-b border-[var(--border)] pb-4">
+      <div>
+        <div class="flex items-center gap-2">
+          <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-500 border border-emerald-500/20">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-1.5 animate-pulse"></span>
+            Stage 1: Pre-training Active
+          </span>
+          <span class="text-xs text-[var(--muted-foreground)]">Model: TinyGPT (~1.97M params)</span>
+        </div>
+        <h2 class="text-xl font-bold mt-1 text-[var(--foreground)]">Training Convergence & Telemetry</h2>
+      </div>
+      <div class="text-right">
+        <span class="text-xs text-[var(--muted-foreground)] block">Progress</span>
+        <span class="text-sm font-semibold text-[var(--foreground)]">Step 500 / 5,000 (10.0%)</span>
+      </div>
+    </div>
+
+    <!-- Stat Badges Grid -->
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+      <div class="p-3.5 rounded-xl border border-[var(--border)] bg-[var(--background)]/50">
+        <div class="text-xs text-[var(--muted-foreground)] font-medium">Initial Loss</div>
+        <div class="text-lg font-bold text-[var(--foreground)] mt-0.5">~6.238</div>
+        <div class="text-xs text-[var(--muted-foreground)] mt-0.5">ln(512) random guess</div>
+      </div>
+      <div class="p-3.5 rounded-xl border border-[var(--border)] bg-[var(--background)]/50">
+        <div class="text-xs text-[var(--muted-foreground)] font-medium">Current Loss</div>
+        <div class="text-lg font-bold text-emerald-500 mt-0.5">2.5577</div>
+        <div class="text-xs text-emerald-500/90 mt-0.5 font-medium">↓ 59.0% decrease</div>
+      </div>
+      <div class="p-3.5 rounded-xl border border-[var(--border)] bg-[var(--background)]/50">
+        <div class="text-xs text-[var(--muted-foreground)] font-medium">Avg Throughput</div>
+        <div class="text-lg font-bold text-sky-500 mt-0.5">32,503 <span class="text-xs font-normal">tok/s</span></div>
+        <div class="text-xs text-[var(--muted-foreground)] mt-0.5">~2.0 steps/sec</div>
+      </div>
+      <div class="p-3.5 rounded-xl border border-[var(--border)] bg-[var(--background)]/50">
+        <div class="text-xs text-[var(--muted-foreground)] font-medium">Gradient Norm</div>
+        <div class="text-lg font-bold text-indigo-500 mt-0.5">0.442</div>
+        <div class="text-xs text-emerald-500 mt-0.5">Stable (clip = 1.0)</div>
+      </div>
+    </div>
+
+    <!-- Metric Tabs -->
+    <div class="flex items-center gap-1.5 border-b border-[var(--border)] pb-2 overflow-x-auto text-xs">
+      <button id="tab-loss" onclick="switchMetric('loss')" class="px-3 py-1.5 rounded-lg font-medium transition-all bg-[var(--accent)] text-[var(--accent-foreground)]">
+        Training Loss
+      </button>
+      <button id="tab-lr" onclick="switchMetric('lr')" class="px-3 py-1.5 rounded-lg font-medium transition-all text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:bg-[var(--accent)]/50">
+        Learning Rate
+      </button>
+      <button id="tab-tps" onclick="switchMetric('tps')" class="px-3 py-1.5 rounded-lg font-medium transition-all text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:bg-[var(--accent)]/50">
+        Throughput (tok/s)
+      </button>
+      <button id="tab-grad" onclick="switchMetric('grad')" class="px-3 py-1.5 rounded-lg font-medium transition-all text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:bg-[var(--accent)]/50">
+        Grad Norm
+      </button>
+    </div>
+
+    <!-- Chart Container -->
+    <div class="relative bg-[var(--background)] border border-[var(--border)] rounded-xl p-4">
+      <div class="flex items-center justify-between mb-3">
+        <div id="chart-title" class="text-sm font-semibold text-[var(--foreground)]">Training Loss vs Steps</div>
+        <div id="tooltip-display" class="text-xs font-mono px-2 py-1 rounded bg-[var(--card)] border border-[var(--border)] text-[var(--muted-foreground)]">
+          Hover over data points to inspect
+        </div>
+      </div>
+
+      <!-- SVG Chart -->
+      <div class="w-full h-64">
+        <svg id="chart-svg" viewBox="0 0 700 240" class="w-full h-full overflow-visible">
+          <!-- Dynamic Content Rendered By Script -->
+        </svg>
+      </div>
+
+      <!-- Step Axis Markers -->
+      <div class="flex justify-between text-[11px] font-mono text-[var(--muted-foreground)] mt-2 pt-2 border-t border-[var(--border)]/60">
+        <span>Step 0</span>
+        <span>Step 100</span>
+        <span>Step 200</span>
+        <span>Step 300</span>
+        <span>Step 400</span>
+        <span>Step 500</span>
+      </div>
+    </div>
+
+    <!-- Data Summary Table -->
+    <div class="overflow-x-auto rounded-xl border border-[var(--border)]">
+      <table class="w-full text-left text-xs border-collapse">
+        <thead class="bg-[var(--background)] text-[var(--muted-foreground)] font-medium border-b border-[var(--border)]">
+          <tr>
+            <th class="py-2.5 px-3">Step</th>
+            <th class="py-2.5 px-3">Loss</th>
+            <th class="py-2.5 px-3">Learning Rate</th>
+            <th class="py-2.5 px-3">Grad Norm</th>
+            <th class="py-2.5 px-3">Throughput</th>
+            <th class="py-2.5 px-3">Tokens Seen</th>
+          </tr>
+        </thead>
+        <tbody id="table-body" class="divide-y divide-[var(--border)]/60 font-mono">
+          <!-- Injected by script -->
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <script>
+    const data = [
+      { step: 0, loss: 6.2383, lr: 0, grad: 0.0, tps: 0 },
+      { step: 50, loss: 5.5204, lr: 7.35e-4, grad: 0.496, tps: 30819 },
+      { step: 100, loss: 4.1107, lr: 1.48e-3, grad: 0.553, tps: 32667 },
+      { step: 150, loss: 3.5724, lr: 2.24e-3, grad: 0.462, tps: 32025 },
+      { step: 200, loss: 3.3727, lr: 2.99e-3, grad: 0.464, tps: 32351 },
+      { step: 250, loss: 3.2023, lr: 3.00e-3, grad: 0.376, tps: 32734 },
+      { step: 300, loss: 3.0444, lr: 3.00e-3, grad: 0.430, tps: 32862 },
+      { step: 350, loss: 2.8858, lr: 2.99e-3, grad: 0.453, tps: 32796 },
+      { step: 400, loss: 2.7579, lr: 2.99e-3, grad: 0.440, tps: 32664 },
+      { step: 450, loss: 2.6475, lr: 2.98e-3, grad: 0.451, tps: 32575 },
+      { step: 500, loss: 2.5577, lr: 2.97e-3, grad: 0.442, tps: 32503 }
+    ];
+
+    let currentMetric = 'loss';
+
+    const metricConfigs = {
+      loss: {
+        title: 'Training Loss Convergence (Cross-Entropy)',
+        color: '#10b981', // emerald
+        gradientId: 'grad-loss',
+        format: v => v.toFixed(4),
+        yMin: 2.0,
+        yMax: 6.5,
+        unit: ''
+      },
+      lr: {
+        title: 'Learning Rate Schedule (Cosine with 200-step Warmup)',
+        color: '#f59e0b', // amber
+        gradientId: 'grad-lr',
+        format: v => v.toExponential(2),
+        yMin: 0,
+        yMax: 0.0035,
+        unit: ''
+      },
+      tps: {
+        title: 'Training Throughput (Tokens / Second)',
+        color: '#0284c7', // sky
+        gradientId: 'grad-tps',
+        format: v => v.toLocaleString() + ' tok/s',
+        yMin: 28000,
+        yMax: 35000,
+        unit: ' tok/s'
+      },
+      grad: {
+        title: 'Global Gradient Norm (Clip Threshold = 1.0)',
+        color: '#6366f1', // indigo
+        gradientId: 'grad-grad',
+        format: v => v.toFixed(3),
+        yMin: 0,
+        yMax: 1.1,
+        unit: ''
+      }
+    };
+
+    function renderTable() {
+      const tbody = document.getElementById('table-body');
+      tbody.innerHTML = data.slice(1).map(d => `
+        <tr class="hover:bg-[var(--accent)]/30 transition-colors">
+          <td class="py-2 px-3 font-semibold text-[var(--foreground)]">${d.step}</td>
+          <td class="py-2 px-3 text-emerald-500 font-bold">${d.loss.toFixed(4)}</td>
+          <td class="py-2 px-3 text-amber-500">${d.lr.toExponential(2)}</td>
+          <td class="py-2 px-3 text-indigo-400">${d.grad.toFixed(3)}</td>
+          <td class="py-2 px-3 text-sky-400">${d.tps.toLocaleString()}</td>
+          <td class="py-2 px-3 text-[var(--muted-foreground)]">${(d.step * 64 * 256).toLocaleString()}</td>
+        </tr>
+      `).join('');
+    }
+
+    function renderChart(metric) {
+      const config = metricConfigs[metric];
+      const svg = document.getElementById('chart-svg');
+      document.getElementById('chart-title').innerText = config.title;
+
+      // Filter data for metric (skip step 0 for throughput and grad)
+      const plotData = (metric === 'tps' || metric === 'grad') ? data.slice(1) : data;
+
+      const paddingLeft = 45;
+      const paddingRight = 20;
+      const paddingTop = 20;
+      const paddingBottom = 30;
+
+      const width = 700 - paddingLeft - paddingRight;
+      const height = 240 - paddingTop - paddingBottom;
+
+      const minX = 0;
+      const maxX = 500;
+      const minY = config.yMin;
+      const maxY = config.yMax;
+
+      const getX = step => paddingLeft + ((step - minX) / (maxX - minX)) * width;
+      const getY = val => paddingTop + height - ((val - minY) / (maxY - minY)) * height;
+
+      // Points
+      const points = plotData.map(d => ({
+        x: getX(d.step),
+        y: getY(d[metric]),
+        d: d
+      }));
+
+      const pathD = points.reduce((acc, p, i) => i === 0 ? `M ${p.x} ${p.y}` : `${acc} L ${p.x} ${p.y}`, '');
+      const areaD = `${pathD} L ${points[points.length - 1].x} ${paddingTop + height} L ${points[0].x} ${paddingTop + height} Z`;
+
+      // Horizontal Grid lines (4 ticks)
+      let gridLines = '';
+      for (let i = 0; i <= 4; i++) {
+        const val = minY + (i / 4) * (maxY - minY);
+        const yPos = getY(val);
+        const formattedVal = (metric === 'lr') ? val.toExponential(1) : (metric === 'tps') ? Math.round(val / 1000) + 'k' : val.toFixed(1);
+        gridLines += `
+          <line x1="${paddingLeft}" y1="${yPos}" x2="${paddingLeft + width}" y2="${yPos}" stroke="var(--border)" stroke-dasharray="3 3" opacity="0.6" />
+          <text x="${paddingLeft - 8}" y="${yPos + 4}" font-size="10" font-family="monospace" fill="var(--muted-foreground)" text-anchor="end">${formattedVal}</text>
+        `;
+      }
+
+      svg.innerHTML = `
+        <defs>
+          <linearGradient id="${config.gradientId}" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="${config.color}" stop-opacity="0.35"/>
+            <stop offset="100%" stop-color="${config.color}" stop-opacity="0.0"/>
+          </linearGradient>
+        </defs>
+        ${gridLines}
+        <path d="${areaD}" fill="url(#${config.gradientId})" />
+        <path d="${pathD}" fill="none" stroke="${config.color}" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="chart-line" />
+        ${points.map((p, idx) => `
+          <g class="cursor-pointer group" onmouseover="showTooltip(${p.d.step}, ${p.d[metric]}, '${metric}')" onmouseout="hideTooltip()">
+            <circle cx="${p.x}" cy="${p.y}" r="4.5" fill="var(--card)" stroke="${config.color}" stroke-width="2.5" class="transition-transform group-hover:scale-150" />
+          </g>
+        `).join('')}
+      `;
+    }
+
+    function showTooltip(step, val, metric) {
+      const config = metricConfigs[metric];
+      const disp = document.getElementById('tooltip-display');
+      disp.innerHTML = `<span class="font-bold text-[var(--foreground)]">Step ${step}:</span> <span style="color: ${config.color}">${config.format(val)}</span>`;
+    }
+
+    function hideTooltip() {
+      document.getElementById('tooltip-display').innerText = 'Hover over data points to inspect';
+    }
+
+    function switchMetric(metric) {
+      currentMetric = metric;
+      ['loss', 'lr', 'tps', 'grad'].forEach(m => {
+        const btn = document.getElementById(`tab-${m}`);
+        if (m === metric) {
+          btn.className = 'px-3 py-1.5 rounded-lg font-medium transition-all bg-[var(--accent)] text-[var(--accent-foreground)] shadow-sm';
+        } else {
+          btn.className = 'px-3 py-1.5 rounded-lg font-medium transition-all text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:bg-[var(--accent)]/50';
+        }
+      });
+      renderChart(metric);
+    }
+
+    renderTable();
+    renderChart('loss');
+  </script>
+</body>
+</html>

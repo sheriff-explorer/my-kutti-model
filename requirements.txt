@@ -1,0 +1,19 @@
+# TinyGPT 2M - Dependencies
+# Install with: pip install -r requirements.txt
+
+# Deep Learning (CUDA 12.1 build for NVIDIA T550)
+torch==2.3.1 --index-url https://download.pytorch.org/whl/cu121
+
+# Tokenization
+tokenizers==0.19.1
+
+# Dataset download
+datasets==2.20.0
+
+# ONNX export + CPU inference
+onnx==1.16.1
+onnxruntime==1.18.1
+
+# Utilities
+numpy==1.26.4
+tqdm==4.66.4

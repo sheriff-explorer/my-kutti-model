@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Environments
+.venv/
+venv/
+ENV/
+env/
+
+# Large pretraining tokens (exceeds GitHub's 100MB limit)
+*.npy
+checkpoints/pretrain_tokens.npy
+
+# Intermediate step checkpoints (keep final_model.pt and best_model.pt)
+checkpoints/**/step_*.pt
+
+# OS files
+.DS_Store
+Thumbs.db
