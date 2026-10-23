@@ -1,6 +1,6 @@
 # my-kutti-model 🚀
 
-An exploration of the transformer architecture to train a language model from scratch with available consumer infrastructure.
+An exploration of the transformer architecture to train a language model from scratch with available consumer infrastructure. Used a coding agent to create the training, inference, and benchmarking code. This exploration is a step in understanding the transformer architecture a tad better. 
 
 **my-kutti-model** is a 1.97M-parameter open language model trained in three stages on a consumer laptop GPU.
 
